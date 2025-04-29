@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const starContainer = document.getElementById('stars-background');
     if (starContainer) {
-        const numStars = 120; const stars = []; /* ... etc ... */
+        const numStars = 120; const stars = []; 
          function onMouseMove(event) { /* ... */ } function updateParallax() { /* ... */ }
          document.body.addEventListener('mousemove', onMouseMove); requestAnimationFrame(updateParallax); document.body.addEventListener('mouseleave', () => { targetX = 0; targetY = 0; });
     }
@@ -24,15 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
                 const targetSection = entry.target;
-                targetSection.classList.add('section-revealed'); // Add trigger class to section
+                targetSection.classList.add('section-revealed'); 
 
-                // Find all animatable items within THAT section
                 const itemsToAnimate = targetSection.querySelectorAll('.animate-item');
 
                 itemsToAnimate.forEach((item, itemIndex) => {
-                    // Calculate stagger delay: base delay + index * increment
-                    const baseDelay = 0; // Start delay for the first item in the section
-                    const staggerIncrement = 0.1; // Delay in seconds between items
+                    const baseDelay = 0;
+                    const staggerIncrement = 0.1; 
                     const totalDelay = baseDelay + itemIndex * staggerIncrement;
 
                     item.style.transitionDelay = `${totalDelay}s`; 
